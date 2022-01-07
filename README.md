@@ -1,8 +1,12 @@
-# emqx-exhook-java-sample
-基于EMQX Broker多语言拓展能力，通过Java实现两个场景示例   
+# emqx-exhook-springboot
+A EMQX Broker exhook sample of springboot framework, start coding with exhook from ExhookGrpcServer.java
 
-* Customized Authentication
-* Topic Proxy Subscriptions
+
+Build project
+
+```
+mvn clean compile
+```
 
 ## Prerequisites
 
@@ -13,5 +17,5 @@
 
 ```
 mvn package
-java -jar target/exhook-svr-1.0-jar-with-dependencies.jar
+java -jar target/emqx-extension-springboot-0.0.1-SNAPSHOT.jar
 ```
