@@ -22,6 +22,7 @@ java -jar target/emqx-extension-springboot-0.0.1-SNAPSHOT.jar
 
 ## Test
 Use this client to test authentication
+
 client id : xxx
 
 username : kp45
