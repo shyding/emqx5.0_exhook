@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+ 
+#server
+server:
+  port: 8089
+
+logging:
+  level:
+    root: info
+    

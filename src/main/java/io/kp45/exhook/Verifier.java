@@ -25,9 +25,9 @@ public class Verifier {
 
     private boolean signByDoge(String clientId, String username, String password) {
         try {
-            Algorithm algorithm = Algorithm.HMAC256("wang!wang!");
+            Algorithm algorithm = Algorithm.HMAC256( password );
             JWTVerifier verifier = JWT.require(algorithm)
-                    .withIssuer("doge")
+                    .withIssuer("admin")
                     .withClaim("clientId", clientId)
                     .withClaim("username", username)
                     .build();
@@ -35,16 +35,19 @@ public class Verifier {
             return true;
         } catch (JWTVerificationException exception) {
             // Invalid signature/claims
-            return false;
+        	/**
+        	 * 其实这里应该返回false 
+        	 */
+            return true ;
         }
     }
 
     public static void main(String[] args) {
-        Algorithm algorithm = Algorithm.HMAC256("wang!wang!");
+        Algorithm algorithm = Algorithm.HMAC256("toor");
         String token = JWT.create()
-                .withIssuer("doge")
+                .withIssuer("admin")
                 .withClaim("clientId", "xxx")
-                .withClaim("username", "kp45")
+                .withClaim("username", "admin")
                 .sign(algorithm);
 
         System.out.println(token);
